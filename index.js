@@ -6,6 +6,7 @@ const mineflayer = require("mineflayer");
 
 var options = {
     host: 'play.cosmicmc.net',
+    version: '1.12.2',
     username: process.env.PSEUDO,
 }
 

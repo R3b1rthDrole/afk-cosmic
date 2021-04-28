@@ -62,7 +62,7 @@ bot.on('windowOpen', (window) => {
 
 //Catch
 bot.on('kicked', (reason, loggedIn) => {
-    console.log(reason, loggedIn)
+    console.log(reason.toString(), loggedIn)
     bot = mineflayer.createBot(options);
 });
 bot.on('error', err => console.log(err))

@@ -1,12 +1,11 @@
 //load discord
 const Discord = require('discord.js')
 const client = new Discord.Client()
-
 //load bot
 const mineflayer = require("mineflayer");
 
 var options = {
-    host: 'mc.pvp-warcraft.net',
+    host: 'play.cosmicmc.net',
     username: process.env.PSEUDO,
 }
 
@@ -22,7 +21,6 @@ client.on('ready', async() => {
 
 //Discord -> Minecraft
 client.on('message', message => {
-    if (message.author.id !== process.env.USER_ID) return;
     if (message.channel.id !== channeler.id) return;
     if (message.content.startsWith("!")) return;
     if (!message.content) return;
@@ -42,16 +40,7 @@ bot.on('message', async(message) => {
     }
 })
 
-let okay = false;
-//Connection
-bot.on('spawn', () => {
-    console.log('redémarrage, reconnection.. dans 5m..');
-    setTimeout(function() {
-        login();
-    }, 5 * 60 * 1000);
-})
-
-bot.once('spawn', () => {
+/*bot.once('spawn', () => {
     console.log('Je rejoins..')
     bot.chat(`/login ${process.env.PASSWORD}`)
     console.log('connection..')
@@ -59,7 +48,7 @@ bot.once('spawn', () => {
         login();
         okay = true;
     }, 2500)
-})
+})*/
 
 //Boussole + inventaire
 function login() {
